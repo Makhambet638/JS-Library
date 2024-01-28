@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Library</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="detective.png" sizes="16x16">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <ul class="tabs">
+                <li class="tab" data-tab="tab1" onclick="openTab('tab1')">Authors</li>
+                <li class="separator">|</li>
+                <li class="tab" data-tab="tab2" onclick="openTab('tab2')">User's Book</li>
+                <li class="separator">|</li>
+                <li class="tab" data-tab="tab3" onclick="openTab('tab3')">Contacts</li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="tab-content" id="tab1">
+        <h1>All Books</h1>
+        <button class="btn" onclick="openAddBookModal()">Add a Book</button>
+        <div class="bookcontainer"></div>
+    </section>
+
+    <section class="tab-content" id="tab2">
+        <h1>All Users</h1>
+        <button class="btn" id="addUserButton">Add a User</button>
+        <div id="userListContainer" class="user-list-container"></div>
+    </section>
+
+    <section class="tab-content tab-flex" id="tab3">
+        <div class="contactsContainer mt-5">
+            <div class="main row justify-content-center">
+                <form action="" id="student-form" class="row justify-content-center mb-4">
+                <div class="col-10 mb-3">
+                    <label for="firstName">First Name</label>
+                    <input id="firstName" class="form-control" type="text" placeholder="Enter Your First Name">
+                </div>
+                <div class="col-10 mb-3">
+                    <label for="lastName">Last Name</label>
+                    <input id="lastName" class="form-control" type="text" placeholder="Enter Your Last Name">
+                </div>
+                <div class="col-10 mb-3">
+                    <label for="rollNo">Phone Number</label>
+                    <input id="rollNo" class="form-control" type="text" placeholder="Enter Your Phone Number">
+                </div>
+                <div class="col-10">
+                    <input class="btnSubmit btn-success add-btn" type="submit" value="Submit">
+                </div>
+            </form>
+            <div class="col-10 mt-5">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last name</th>
+                            <th>Phone Number</th>
+                            <th>actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="student-list">
+                        <tr>
+                            <td>Dear</td>
+                            <td>User</td>
+                            <td>+7777433200</td>
+                            <td>
+                                <a href="#" class="btnEdit btn-sm edit">Edit</a>
+                                <a href="#" class="btnDelete btn-sm delete">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+    </section>
+    
+     <div id="addBookModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddBookModal()">&times;</span>
+            <h2>Add a Book</h2>
+            <label for="authorName">Author's Name:</label>
+            <input type="text" id="authorName" name="authorName" required>
+            <label for="publicationDate">Publication Date:</label>
+            <input type="date" id="publicationDate" name="publicationDate" required>
+            <label for="pages">Pages:</label>
+            <input type="text" id="pages" name="pages" required>
+            <label for="quantity">Quantity:</label>
+            <input type="text" id="quantity" name="Quantity" required>
+            <button id="saveBookButton" class="btn" onclick="saveBook()">Save Book</button>
+        </div>
+    </div>
+
+    <div id="addUserModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeUserModal">&times;</span>
+            <h2>Add a User</h2>
+            <label for="userName">Book Title</label>
+            <input type="text" name="bookTitle" id="bookTitle">
+            <label for="userName">Visitor's Name</label>
+            <input type="text" name="visitorName" id="visitorName">
+            <label for="genre">Genre</label>
+            <input type="text" name="genre" id="genre">
+            <label for="year">Year</label>
+            <input type="text" name="year" id="year">
+            <label for="userQuantity">Quantity</label>
+            <input type="text" name="userQuantity" id="userQuantity">
+            <button class="btn" id="saveUser">Save User</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -149,7 +149,6 @@ function renderBooks() {
 function clearLocalStorage() {
     localStorage.removeItem(STORAGE_KEY);
 }
-clearLocalStorage()
 
 // #tab2
 

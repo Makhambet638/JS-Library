@@ -150,7 +150,6 @@ function clearLocalStorage() {
     localStorage.removeItem(STORAGE_KEY);
 }
 
-
 // #tab2
 
 const usersArr = [];

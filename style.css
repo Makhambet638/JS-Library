@@ -1,6 +1,6 @@
 body{
     background-color: #374151;
-    overflow-y: hidden;
+    overflow-x: hidden;
 }
 .nav{
     margin: 50px;
@@ -155,16 +155,18 @@ body{
     cursor: pointer;
     margin: 25px;
 }
-.card-container{
+.contactsContainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
+    width: 100%;
 }
 .main{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 .row{
     display: flex;
@@ -176,11 +178,14 @@ body{
     flex-direction: column;
     margin: 10px;
     margin-right: 100px;
+    flex-wrap: wrap;
 }
 .form-control{
-    width: 500px;
+    display: flex;
     padding: 7px;
     border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
 }
 .btnSubmit{
     width: 100px;
@@ -192,7 +197,8 @@ body{
 }
 .table{
     background-color: rgba(0, 0, 0, 0.5);
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
     margin-left: 40px;
     border: 1px solid black;
 }
@@ -209,13 +215,11 @@ body{
     border: 1px solid transparent;
     border-radius: 4px;
 }
-
 .alert-success {
     background-color: #d4edda;
     border-color: #c3e6cb;
     color: #155724;
 }
-
 .alert-danger {
     background-color: #f8d7da;
     border-color: #f5c6cb;
@@ -257,4 +261,12 @@ body{
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+}
+@media only screen and (min-width:601px ) and (max-width:2000px){
+    .form-control{
+        width: 400px;
+    }
+    .table{
+        width: 400px;
+    }
 }
